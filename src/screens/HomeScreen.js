@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   Platform,
@@ -9,10 +9,9 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { MonoText } from '../components';
 
-import { MonoText } from '../components/StyledText';
-
-export default class HomeScreen extends React.Component {
+export default class HomeScreen extends Component {
   static navigationOptions = {
     header: null,
   };

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Notifications } from 'expo';
 import { createSwitchNavigator } from 'react-navigation';
-
-import MainTabNavigator from './MainTabNavigator';
+import { MainTabNavigator } from '.';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 const AppNavigator = createSwitchNavigator({
@@ -11,7 +10,7 @@ const AppNavigator = createSwitchNavigator({
   Main: MainTabNavigator,
 });
 
-export default class RootNavigation extends React.Component {
+export default class RootNavigation extends Component {
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
   }
