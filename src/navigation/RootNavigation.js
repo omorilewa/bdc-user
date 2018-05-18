@@ -17,10 +17,6 @@ export default class RootNavigation extends Component {
     this._notificationSubscription && this._notificationSubscription.remove();
   }
 
-  render() {
-    return <AppNavigator />;
-  }
-
   _registerForPushNotifications() {
     // Send our push token over to our backend so we can receive notifications
     // You can comment the following line out if you want to stop receiving
@@ -35,4 +31,8 @@ export default class RootNavigation extends Component {
   _handleNotification = ({ origin, data }) => {
     console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`);
   };
+
+  render() {
+    return <AppNavigator />;
+  }
 }
