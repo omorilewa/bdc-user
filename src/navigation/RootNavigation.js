@@ -14,7 +14,7 @@ export default class RootNavigation extends Component {
   }
 
   componentWillUnmount() {
-    this._notificationSubscription && this._notificationSubscription.remove();
+    return this._notificationSubscription && this._notificationSubscription.remove();
   }
 
   _registerForPushNotifications() {
@@ -29,7 +29,7 @@ export default class RootNavigation extends Component {
   }
 
   _handleNotification = ({ origin, data }) => {
-    console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`);
+    console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`); // eslint-disable-line
   };
 
   render() {

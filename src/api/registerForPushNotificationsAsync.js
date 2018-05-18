@@ -22,7 +22,7 @@ export default (async function registerForPushNotificationsAsync() {
   const token = await Notifications.getExpoPushTokenAsync();
 
   // POST the token to our backend so we can use it to send pushes from there
-  return fetch(PUSH_ENDPOINT, {
+  fetch(PUSH_ENDPOINT, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

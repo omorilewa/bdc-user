@@ -4,6 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import { TabBarIcon } from '../components';
 import { HomeScreen, LinksScreen, SettingsScreen } from '../screens';
 
+/* eslint-disable react/prop-types */
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
