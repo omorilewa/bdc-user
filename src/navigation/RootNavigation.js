@@ -1,27 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Notifications } from 'expo';
 import { createSwitchNavigator } from 'react-navigation';
-
-import MainTabNavigator from './MainTabNavigator';
+import { MainTabNavigator } from '.';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 const AppNavigator = createSwitchNavigator({
-  // You could add another route here for authentication.
-  // Read more at https://reactnavigation.org/docs/en/auth-flow.html
   Main: MainTabNavigator,
 });
 
-export default class RootNavigation extends React.Component {
+export default class RootNavigation extends Component {
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
   }
 
   componentWillUnmount() {
-    this._notificationSubscription && this._notificationSubscription.remove();
-  }
-
-  render() {
-    return <AppNavigator />;
+    return this._notificationSubscription && this._notificationSubscription.remove();
   }
 
   _registerForPushNotifications() {
@@ -36,6 +29,10 @@ export default class RootNavigation extends React.Component {
   }
 
   _handleNotification = ({ origin, data }) => {
-    console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`);
+    console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`); // eslint-disable-line
   };
+
+  render() {
+    return <AppNavigator />;
+  }
 }
