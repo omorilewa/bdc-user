@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { string, bool } from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
-export default class TabBarIcon extends React.Component {
+export default class TabBarIcon extends Component {
+  static propTypes = {
+    name: string,
+    focused: bool,
+  }
+
   render() {
     return (
       <Ionicons
