@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { object } from 'prop-types';
+import { object, number, oneOfType } from 'prop-types';
 import { Text } from 'react-native';
 
 export class MonoText extends Component {
   static propTypes = {
-    style: object,
+    style: oneOfType([object, number]),
   }
 
   render() {
