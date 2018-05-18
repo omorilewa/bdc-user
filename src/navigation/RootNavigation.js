@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Notifications } from 'expo';
 import { createSwitchNavigator } from 'react-navigation';
-import MainTabNavigator from './MainTabNavigator';
+import { MainTabNavigator } from '.';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 const AppNavigator = createSwitchNavigator({
